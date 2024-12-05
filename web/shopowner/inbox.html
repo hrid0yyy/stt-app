@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/styles/style-so.css">
+    <link rel="stylesheet" href="../assets/styles/graph.css">
+    <link rel="stylesheet" href="../assets/styles/inbox.css">
+ 
+    <script>
+        import 'iconify-icon'
+    </script>
+    
+
+</head>
+<body>
+    <section class="sidebar">
+        
+        <div class="menu">
+            
+            <div class="logo-icon">
+                <img class="icon-class" src="../assets/icons/logo-icon.png" alt="">
+            </div>
+            <div class="links ">
+                <div class="center grid mb-5 active common-hover">
+                    <a href="dashboard.html">
+                        <img class="icon-class" src="../assets/icons/grid.png" alt="">
+                    </a>
+                </div>
+                <div class="center profile common-hover">
+                    <a href="profile.html">
+                        <img class="icon-class" src="../assets/icons/profile.png" alt="">
+                    </a>
+                </div>
+                <div class="center message common-hover">
+                    <a href="#">
+                        <img class="icon-class-small message-with-dot " src="../assets/icons/orange-dot.png" alt="">
+                        <img class="icon-class" src="../assets/icons/message.png" alt="">
+                    </a>
+                </div>
+                <div class="center reader common-hover">
+                    <a href="#">
+                        
+                        <img class="icon-class " src="../assets/icons/reader.png" alt="">
+                    </a>
+                </div>
+                <div class="center books common-hover">
+                    <a href="#">
+                        
+                        <img class="icon-class " src="../assets/icons/book.png" alt="">
+                    </a>
+                </div>
+                <div class="center review common-hover">
+                    <a href="#">
+                        
+                        <img class="icon-class " src="../assets/icons/review.png" alt="">
+                    </a>
+                </div>
+                <div class="center settings common-hover">
+                    <a href="#">
+                        
+                        <img class="icon-class " src="../assets/icons/material-symbols--settings-outline.png" alt="">
+                    </a>
+                </div>
+                <div class="center logout common-hover">
+                    <a href="#">
+                        
+                        <img class="icon-class " src="../assets/icons/logout.png" alt="">
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+        
+    </section>
+
+    <section class="navbar">
+        <div class="bar ">
+            <img class="icon-class" src="../assets/icons/bar.png" alt="">
+        </div>
+        <div class="profile-section">
+            <div class="plus">
+                <img class="icon-class" src="../assets/icons/plus.png" alt="">
+            </div>
+            <div class="notification">
+                <img class="icon-class-small isNotification" src="../assets/icons/orange-dot.png" alt="">
+                <img class="icon-class bell" src="../assets/icons/bell.png" alt="">
+            </div>
+            <div class="profile-div">
+                <img class="icon-class-dp" src="../assets/icons/dp.jpeg" alt="">
+            </div>
+        </div>
+    </section>
+    
+    <div class="messenger-ui">
+        <!-- Chatlist Section -->
+        <section class="chatlist-section">
+            <div class="chatlist">
+                <div class="user-box" onclick="openChat('Roronoa Zoro', '6:30 A.M.', 'New Message...')">
+                    <div class="user-dp">
+                        <img src="../assets/icons/dp.jpeg" class="icon-class-dp" alt="Profile Picture">
+                    </div>
+                    <div class="user_info_and_msg">
+                        <div class="user_name_and_time">
+                            <div class="user_name">
+                                <h3>Roronoa Zoro</h3>
+                            </div>
+                            <div class="time">
+                                <span>6:30 A.M.</span>
+                            </div>
+                        </div>
+                        <div class="actual-msg">
+                            <p>New Message...</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- User 2 -->
+            <div class="user-box" onclick="openChat('Nami', '7:30 A.M.', 'Lets talk about treasure..')">
+                <div class="user-dp">
+                    <img src="../assets/icons/dp.jpeg" class="icon-class-dp" alt="Profile Picture">
+                </div>
+                <div class="user_info_and_msg">
+                    <div class="user_name_and_time">
+                        <div class="user_name">
+                            <h3>Nami</h3>
+                        </div>
+                        <div class="time">
+                            <span>7:15 A.M.</span>
+                        </div>
+                    </div>
+                    <div class="actual-msg">
+                        <p>Let's discuss the treasure map.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- User 3 -->
+            <div class="user-box" onclick="openChat('Sanji', '6:30 A.M.', 'Breakfast is ready!')">
+                <div class="user-dp">
+                    <img src="../assets/icons/dp.jpeg" class="icon-class-dp" alt="Profile Picture">
+                </div>
+                <div class="user_info_and_msg">
+                    <div class="user_name_and_time">
+                        <div class="user_name">
+                            <h3>Sanji</h3>
+                        </div>
+                        <div class="time">
+                            <span>8:00 A.M.</span>
+                        </div>
+                    </div>
+                    <div class="actual-msg">
+                        <p>Breakfast is ready!</p>
+                    </div>
+                </div>
+            </div>
+            <!-- User 4 -->
+            <div class="user-box" onclick="openChat('Luffy', '6:30 A.M.', 'I am going to be the Pirate King!')">
+                <div class="user-dp">
+                    <img src="../assets/icons/dp.jpeg" class="icon-class-dp" alt="Profile Picture">
+                </div>
+                <div class="user_info_and_msg">
+                    <div class="user_name_and_time">
+                        <div class="user_name">
+                            <h3>Luffy</h3>
+                        </div>
+                        <div class="time">
+                            <span>9:45 A.M.</span>
+                        </div>
+                    </div>
+                    <div class="actual-msg">
+                        <p>I'm going to be the Pirate King!</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+    
+        <!-- Inbox Section -->
+<!-- Inbox Section -->
+<section class="inbox-section">
+    <div class="inbox">
+        <div class="inbox-header">
+            <img id="chat-avatar" src="default-avatar.png" alt="Sender Avatar" class="avatar">
+            <h3 id="chat-title">Select a Chat</h3>
+        </div>
+        <div class="chat-box" id="chat-box">
+            <!-- Messages will load dynamically -->
+            <p class="placeholder">Click a user to load the chat.</p>
+        </div>
+        <div class="input-box">
+            <input type="text" id="message-input" placeholder="Type a message...">
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+</section>
+
+
+    </div>
+    <script>
+       // Handle chat loading
+function openChat(userName, userAvatar, time, lastMessage) {
+    // Set chat title and avatar
+    document.getElementById("chat-title").innerText = userName;
+    document.getElementById("chat-avatar").src = userAvatar;
+
+    // Load messages into the chat box
+    const chatBox = document.getElementById("chat-box");
+    chatBox.innerHTML = `
+        <div class="message receiver">
+            <p><strong>${userName}</strong> at ${time}:</p>
+            <p>${lastMessage}</p>
+        </div>
+    `;
+
+    // Clear the input field
+    document.getElementById("message-input").value = "";
+}
+
+// Handle sending messages
+document.getElementById("send-btn").addEventListener("click", function () {
+    const input = document.getElementById("message-input");
+    const message = input.value.trim();
+
+    if (message) {
+        const chatBox = document.getElementById("chat-box");
+        chatBox.innerHTML += `
+            <div class="message sender">
+                <p><strong>You:</strong></p>
+                <p>${message}</p>
+            </div>
+        `;
+
+        // Scroll to the bottom
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+        // Clear input
+        input.value = "";
+    }
+});
+
+
+    </script>
+
+</body>
