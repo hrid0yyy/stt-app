@@ -1,0 +1,10 @@
+.main--content{
+    width: 95%;
+    height: 100%;
+    /* border:1px solid red; */
+    background-color: #ddd;
+    margin-left: 5%;
+    position: relative;
+    top:58px;
+    right: 0;
+}

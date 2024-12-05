@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: manuale-bold
+font link: https://fonts.google.com/specimen/Manuale
+font author: Omnibus Type
+font author site: http://www.omnibus-type.com/
+
+
+icon designer: frederick allen
+icon designer link: /frederickallen
+        
+{"bg":"#353922","icon":"#98D82C","font":"#FFFFFF","slogan":"#ffffff"}
+      

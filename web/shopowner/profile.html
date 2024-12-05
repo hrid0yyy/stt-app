@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/styles/style-so.css">
+    <link rel="stylesheet" href="../assets/styles/graph.css">
+    <link rel="stylesheet" href="../assets/styles/profile-so.css">
+    <script>
+        import 'iconify-icon'
+    </script>
+</head>
+<body>
+    <section class="sidebar">
+        
+        <div class="menu">
+            
+            <div class="logo-icon">
+                <img class="icon-class" src="../assets/icons/logo-icon.png" alt="">
+            </div>
+            <div class="links ">
+                <div class="center grid mb-5  common-hover">
+                    <a href="dashboard.html">
+                        <img class="icon-class" src="../assets/icons/grid.png" alt="">
+                    </a>
+                </div>
+                <div class="center profile common-hover active">
+                    <a href="#">
+                        <img class="icon-class" src="../assets/icons/profile.png" alt="">
+                    </a>
+                </div>
+                <div class="center message common-hover">
+                    <a href="inbox.html">
+                        <img class="icon-class-small message-with-dot " src="../assets/icons/orange-dot.png" alt="">
+                        <img class="icon-class" src="../assets/icons/message.png" alt="">
+                    </a>
+                </div>
+                <div class="center reader common-hover">
+                    <a href="#">
+                        
+                        <img class="icon-class " src="../assets/icons/reader.png" alt="">
+                    </a>
+                </div>
+                <div class="center books common-hover">
+                    <a href="#">
+                        
+                        <img class="icon-class " src="../assets/icons/book.png" alt="">
+                    </a>
+                </div>
+                <div class="center review common-hover">
+                    <a href="#">
+                        
+                        <img class="icon-class " src="../assets/icons/review.png" alt="">
+                    </a>
+                </div>
+                <div class="center settings common-hover">
+                    <a href="#">
+                        
+                        <img class="icon-class " src="../assets/icons/material-symbols--settings-outline.png" alt="">
+                    </a>
+                </div>
+                <div class="center logout common-hover">
+                    <a href="#">
+                        
+                        <img class="icon-class " src="../assets/icons/logout.png" alt="">
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+        
+    </section>
+
+    <section class="navbar">
+        <div class="bar ">
+            <img class="icon-class" src="../assets/icons/bar.png" alt="">
+        </div>
+        <div class="profile-section">
+            <div class="plus">
+                <img class="icon-class" src="../assets/icons/plus.png" alt="">
+            </div>
+            <div class="notification">
+                <img class="icon-class-small isNotification" src="../assets/icons/orange-dot.png" alt="">
+                <img class="icon-class bell" src="../assets/icons/bell.png" alt="">
+            </div>
+            <div class="profile-div">
+                <img class="icon-class-dp" src="../assets/icons/dp.jpeg" alt="">
+            </div>
+        </div>
+    </section>
+    <!-- profile section  -->
+
+    <section class="profile--section">
+        <div class="dashboard-title">
+            <span class="heading-title">Home | Dashboard</span>
+        </div>
+        <div class="profile-info">
+            <div class="form--container">
+                <div class="basic-profile-form">
+                    <form action="">
+                        <div >
+                            <label for="cover-pic"></label>
+
+                            <input type="file" class="cover-pic " > 
+                            
+                        </div>
+                        <div class="profile-pic-container">
+                            
+                            <input type="file" class="profile-pic"> 
+                        </div>
+                        <div class="shop-title-location">
+                            Boikhor | 12/7 Ideal point, Dhaka
+                        </div>
+                        <!-- Editable Information Section -->
+                        <div class="info-section">
+                            <h2 class="underlined-text">Personal Information</h2>
+                                
+                                <table>
+                                    <tr>
+                                        <td><label for="name">Full Name:</label></td>
+                                        <td><input type="text" id="name" placeholder="Enter your name" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="phone">Phone Number:</label></td>
+                                        <td><input type="text" id="phone" placeholder="Enter your phone number" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="email">Email Address:</label></td>
+                                        <td><input type="email" id="email" placeholder="Enter your email" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><button type="button" id="savePersonalInfo">Save</button></td>
+                                        
+                                        </td>
+                                    </tr>
+                                </table>
+                        </div>
+                        <div class="info-section">
+                            <h2 class="underlined-text">Business Information</h2>
+                                
+                                <table>
+                                    <tr>
+                                        <td><label for="name">Shop Name:</label></td>
+                                        <td><input type="text" id="name" placeholder="Enter your name" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="phone">Shop Address:</label></td>
+                                        <td><input type="text" id="text" placeholder="Enter your phone number" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="email">Shop Email Address:</label></td>
+                                        <td><input type="email" id="email" placeholder="Enter your email" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><button type="button" id="savePersonalInfo">Save</button></td>
+                                        
+                                        </td>
+                                    </tr>
+                                </table>
+                        </div>
+                        <div class="info-section">
+                            <h2 class="underlined-text">Account Details</h2>
+                                
+                                <table>
+                                    <tr>
+                                        <td><label for="name">Username:</label></td>
+                                        <td><input type="text" id="name" placeholder="Enter your name" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="phone">Password:</label></td>
+                                        <td><input type="password" id="text" placeholder="Enter your phone number" />
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td><button type="button" id="savePersonalInfo">Save</button></td>
+                                        
+                                        </td>
+                                    </tr>
+                                </table>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="extra-info">
+                <div class="location">
+                    <h3>Location</h3>
+                    <div class="common-flex">
+                        <img class="icon-class"src="../assets/icons/location.png" alt="">
+                        <span class="text">Kuril,Bishwaroad</span>
+                    </div>
+                </div>
+                <div class="connect">
+                    <h3>Connect</h3>
+                    <div class="common-flex">
+                        <img src="../assets/icons/internet.png" class="icon-class" alt="">
+                        <span class="text">www.boikhor.com</span>
+                    </div>
+                    <div class="common-flex">
+                        <img src="../assets/icons/facebook.png" class="icon-class" alt="">
+                        <span class="text">Facebook</span>
+                    </div>
+                    <div class="common-flex">
+                        <img src="../assets/icons/twitter.png" class="icon-class" alt="">
+                        <span class="text">Twitter</span>
+                    </div>
+                    <div class="common-flex">
+                        <img src="../assets/icons/linkedin.png" class="icon-class" alt="">
+                        <span class="text">Linkedin</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+
+    <!-- profile section end  -->
+</body>
+</html>
