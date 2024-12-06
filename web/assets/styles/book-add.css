@@ -1,0 +1,305 @@
+.form-container{
+    width: 100%;
+    height: auto;
+    /* border: 1px solid red; */
+    padding: 1rem;
+}
+form{
+    width: 100%;
+    height: auto;
+    /* border:1px solid green; */
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    
+}
+.tab-one{
+    width: 45%;
+    height: auto;
+    padding:1rem;
+    /* border:1px solid blue; */
+    border-radius:8px;
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem;
+    background-color: #f5f5f5;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.tab-two{
+    width: 45%;
+    height: auto;
+    padding:1rem;
+    /* border:1px solid blue; */
+    border-radius:8px;
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem;
+    background-color: #f5f5f5;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.input-title{
+    font-size: 1.25rem;
+    color:#474747;
+    display: flex;
+    align-items: center;
+    gap:0.5rem;
+}
+.input-field input{
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #474747;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.input-field input:focus{
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+/* Container styling */
+.input-field.upload-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%; 
+    height: 150px; 
+    border: 2px dashed #007bff;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Label styling */
+  .upload-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #007bff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  .upload-img img{
+    width: 50px;
+    height: 50px;
+  }
+
+  .input-field.upload-img:hover {
+    background-color: #e9f4ff;
+    transform: scale(1.01);
+  }
+  
+  .upload-label:hover {
+    color: #0056b3;
+  }
+  
+
+  input[type="file"] {
+    display: none; 
+  }
+
+  /* General container styling */
+.genre-selection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Hide the default checkbox */
+.genre-option input[type="checkbox"] {
+  display: none;
+}
+
+/* Styled button-like spans */
+.genre-option span {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for the button */
+.genre-option span:hover {
+  background-color: #e0e0e0;
+}
+
+/* Selected state */
+.genre-option input[type="checkbox"]:checked + span {
+  background-color: #121212;
+  color: white;
+  /* border-color: #4caf50; */
+  transform: scale(1.01); /* Slightly larger to indicate selection */
+}
+
+/* Transition effect */
+.genre-option span {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.category-select {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 16px;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    appearance: none; /* Remove default dropdown arrow styling */
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  /* Hover and focus styles */
+  .category-select:hover,
+  .category-select:focus {
+    border-color: #007bff;
+    background-color: #eef6ff;
+  }
+
+  
+  .price-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    width: 120px;
+  }
+  
+  .price-input:focus {
+    border-color: #007bff;
+  }
+  .input-field:focus {
+    border-color: #007bff;
+  }
+  .input-field:hover {
+    border-color: #007bff;
+  }
+  .input-field input:focus{
+    border-color: #007bff;
+  }
+  .input-field input:hover{
+    border-color: #007bff;
+  }
+  .flex-gap{
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    font-weight: 500;
+    color:#474747;
+    gap:1rem;
+  }
+  .optional{
+    color:#69ab00;
+    font-size: 14px;
+  }
+  /* Container for the input field */
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+  
+  /* Label styling */
+  .input-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Textarea styling */
+  .input-textarea {
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    font-size: 14px;
+    font-family: inherit;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    resize: none; /* Prevents resizing */
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  /* Textarea focus effect */
+  .input-textarea:focus {
+    border-color: #007bff; /* Change border color on focus */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Placeholder styling */
+  .input-textarea::placeholder {
+    color: #aaa;
+    font-style: italic;
+  }
+  /* Button group container */
+.button-group {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 10px; /* Space between buttons */
+  }
+  
+  /* Base button styling */
+  .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    color: white; /* Text color */
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:0.5rem;
+  }
+  
+  /* Discard button (red) */
+  .discard-btn {
+    background-color: #f44336;
+  }
+  
+  .discard-btn:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+  }
+  
+  /* Save Draft button (green) */
+  .save-draft-btn {
+    background-color: #4caf50;
+  }
+  
+  .save-draft-btn:hover {
+    background-color: #388e3c; /* Darker green on hover */
+    transform: scale(1.05);
+  }
+  
+  /* Publish button (bluish) */
+  .publish-btn {
+    background-color: #2196f3;
+  }
+  
+  .publish-btn:hover {
+    background-color: #1976d2; /* Darker blue on hover */
+    transform: scale(1.05);
+  }
+  
+  
