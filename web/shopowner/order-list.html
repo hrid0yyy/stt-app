@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/styles/top-sell.css">
+    <link rel="stylesheet" href="../assets/styles/main--content.css">
+    <link rel="stylesheet" href="../assets/styles/nav.css">
+    <link rel="stylesheet" href="../assets/styles/sidebar.css">
+    <link rel="stylesheet" href="../assets/styles/universal.css">
+    <link rel="stylesheet" href="../assets/styles/pagination.css">
+    <link rel="stylesheet" href="../assets/styles/order-list.css">
+    
+</head>
+    <section class="sidebar">
+        <div class="menu">
+            <div class="logo-icon">
+                <img class="icon-class" src="../assets/icons/logo-icon.png" alt="Logo">
+            </div>
+            <div class="links">
+                <div class="center grid common-hover active">
+                    <a href="dashboard.html" class="link">
+                        <img class="icon-class" src="../assets/icons/grid.png" alt="Dashboard">
+                    </a>
+                </div>
+                <div class="center profile common-hover">
+                    <a href="profile.html" class="link">
+                        <img class="icon-class" src="../assets/icons/profile.png" alt="Profile">
+                    </a>
+                </div>
+                <div class="center message common-hover">
+                    <a href="#" class="link">
+                        <img class="icon-class-small message-with-dot" src="../assets/icons/orange-dot.png" alt="">
+                        <img class="icon-class" src="../assets/icons/message.png" alt="Messages">
+                    </a>
+                </div>
+                <div class="center reader common-hover">
+                    <a href="#">
+                        
+                        <img class="icon-class " src="../assets/icons/reader.png" alt="">
+                    </a>
+                </div>
+                <div class="center books common-hover">
+                    <a href="#">
+                        
+                        <img class="icon-class " src="../assets/icons/book.png" alt="">
+                    </a>
+                </div>
+                <div class="center review common-hover">
+                    <a href="#">
+                        
+                        <img class="icon-class " src="../assets/icons/review.png" alt="">
+                    </a>
+                </div>
+                <div class="center settings common-hover">
+                    <a href="#">
+                        
+                        <img class="icon-class " src="../assets/icons/material-symbols--settings-outline.png" alt="">
+                    </a>
+                </div>
+                <div class="center logout common-hover">
+                    <a href="#">
+                        
+                        <img class="icon-class " src="../assets/icons/logout.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- navbar start  -->
+    <section class="navbar">
+        <div class="bar">
+            <img class="icon-class" src="../assets/icons/bar.png" alt="Menu">
+        </div>
+        <div class="profile-section">
+            <div class="plus">
+                <img class="icon-class" src="../assets/icons/plus.png" alt="Add">
+            </div>
+            <div class="notification">
+                <img class="icon-class-small isNotification" src="../assets/icons/orange-dot.png" alt="">
+                <img class="icon-class bell" src="../assets/icons/bell.png" alt="Notifications">
+            </div>
+            <div class="profile-div">
+                <img class="icon-class-dp" src="../assets/icons/dp.jpeg" alt="Profile Picture">
+            </div>
+        </div>
+    </section>
+    <!-- navbar end  -->
+    <!-- main--content start  -->
+    <section class="main--content">
+        <div class="dashboard--title">
+            <div id="dashboard-title"><span>Dashboard</span></div>
+            <div class="single-bar"></div>
+            <div class="page-title">Books Management</div>
+            <div class="single-bar"></div>
+            <div class="page-title">Order List</div>
+        </div>
+        <!-- dashboard title end  -->
+        
+        <!-- count tab start -->
+        <div class="count-tab">
+            <div class="secondary--links">
+                <div class="secondary-link-title">
+                    <span>All</span>
+                </div>
+                <div class="secondary-text">
+                    (3650)
+                </div>
+            </div>
+            <div class="secondary--links">
+                <div class="secondary-link-title">
+                    <span>Published</span>
+                </div>
+                <div class="secondary-text">
+                    (751)
+                </div>
+            </div>
+            <div class="secondary--links">
+                <div class="secondary-link-title">
+                    <span>Stock</span>
+                </div>
+                <div class="secondary-text">
+                    (1540)
+                </div>
+            </div>
+            <div class="secondary--links">
+                <div class="secondary-link-title">
+                    <span>Top Sells</span>
+                </div>
+                <div class="secondary-text">
+                    (115)
+                </div>
+            </div>
+        </div>
+        <!-- count tab start -->
+        <!-- search bar section start  -->
+
+        <div class="search-bar-section">
+            <form class="search-bar" method="GET" action="/search">
+                <div class="input-field">
+                    <input 
+                        type="text" 
+                        name="query" 
+                        placeholder="Search" 
+                        required 
+                        aria-label="Search items">
+                </div>
+                <div class="search--icon">
+                    <button type="submit" style="border: none; background: none; padding: 0;">
+                        <img 
+                            src="../assets/icons/search.png" 
+                            class="icon-class search-icon" 
+                            alt="Search">
+                    </button>
+                </div>
+            </form>
+
+            <!-- filter section  start-->
+            <div class="filter--section reminder-btn">
+                <select name="division" id="division-filter" class="division-select">
+                    <option value="division" selected disabled hidden>Genre</option>
+                    <option value="chattagram">Romance</option>
+                    <option value="barisal">History</option>
+                    <option value="mymensingh">Comedy</option>
+                </select>
+            </div>
+            <!-- filter section  end-->
+            <!-- reminder section start -->
+            <div class="reminder-btn">
+                <div class="">
+                    <span>Top Sell</span>
+                </div>
+            </div>
+            <div class="reminder-btn">
+                <div class="">
+                    <span>Discounted Books</span>
+                </div>
+            </div>
+            
+            <div class="reminder-btn">
+                <div class="">
+                    <span>Exchanged Books</span>
+                </div>
+            </div>
+            <div class="reminder-btn">
+                <div class="">
+                    <span>Advertisement</span>
+                </div>
+            </div>
+            <div class="reminder-btn">
+                <div class="">
+                    <span>Add Books</span>
+                </div>
+            </div>
+            <!-- reminder section  end-->
+             
+        </div>
+
+        <!-- search bar section end  -->
+
+                <!-- books count table start  -->
+
+                <div class="table-container">
+                    <table class="customer-table">
+                        <h3 class="underlined-text">Book in Stock</h3>
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox"></th>
+                                <th>Order ID</th>
+                                <th>PRICE</th>
+                                <th>BOOK</th>
+                                <th>Customer</th>
+                                <th>Delivary Status</th>
+                                <th>Payment</th>
+                                <th>Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>#2148</td>
+                                <td>340 TK</td>
+                                <td>
+                                    <div class="book-info-td">
+                                        <a href="../reader-profile.html">
+                                            <img src="../assets/images/The-Casual-Optimist.jpg" class="icon-class-td" alt="Customer">
+                                        <span>The Casual Optimist</span>
+                                        </a>
+                                        
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="customer-info">
+                                        <a href="../reader-profile.html">
+                                            <img src="../assets/icons/dp.jpeg" class="icon-class-dp" alt="Customer">
+                                        <span>Luffy</span>
+                                        </a>
+                                        
+                                    </div>
+                                </td>
+                                <td>Pending</td>
+                                <td>Pending</td>
+                                <td>21,June,3036 </td>
+                                <td>
+                                    <div class="button-group">
+                                      <button class="btn btn-view">View</button>
+                                      <button class="btn btn-export">Print</button>
+                                      
+                                    </div>
+                                  </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>#2148</td>
+                                <td>340 TK</td>
+                                <td>
+                                    <div class="book-info-td">
+                                        <a href="../reader-profile.html">
+                                            <img src="../assets/images/The-Casual-Optimist.jpg" class="icon-class-td" alt="Customer">
+                                        <span>The Casual Optimist</span>
+                                        </a>
+                                        
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="customer-info">
+                                        <a href="../reader-profile.html">
+                                            <img src="../assets/icons/dp.jpeg" class="icon-class-dp" alt="Customer">
+                                        <span>Luffy</span>
+                                        </a>
+                                        
+                                    </div>
+                                </td>
+                                <td>Pending</td>
+                                <td>Pending</td>
+                                <td>21,June,3036 </td>
+                                <td>
+                                    <div class="button-group">
+                                        <button class="btn btn-view">View</button>
+                                        <button class="btn btn-export">Print</button>
+                                      
+                                    </div>
+                                  </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>#2148</td>
+                                <td>340 TK</td>
+                                <td>
+                                    <div class="book-info-td">
+                                        <a href="../reader-profile.html">
+                                            <img src="../assets/images/The-Casual-Optimist.jpg" class="icon-class-td" alt="Customer">
+                                        <span>The Casual Optimist</span>
+                                        </a>
+                                        
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="customer-info">
+                                        <a href="../reader-profile.html">
+                                            <img src="../assets/icons/dp.jpeg" class="icon-class-dp" alt="Customer">
+                                        <span>Luffy</span>
+                                        </a>
+                                        
+                                    </div>
+                                </td>
+                                <td>Pending</td>
+                                <td>Pending</td>
+                                <td>21,June,3036 </td>
+                                <td>
+                                    <div class="button-group">
+                                        <button class="btn btn-view">View</button>
+                                        <button class="btn btn-export">Print</button>
+                                      
+                                    </div>
+                                  </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>#2148</td>
+                                <td>340 TK</td>
+                                <td>
+                                    <div class="book-info-td">
+                                        <a href="../reader-profile.html">
+                                            <img src="../assets/images/The-Casual-Optimist.jpg" class="icon-class-td" alt="Customer">
+                                        <span>The Casual Optimist</span>
+                                        </a>
+                                        
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="customer-info">
+                                        <a href="../reader-profile.html">
+                                            <img src="../assets/icons/dp.jpeg" class="icon-class-dp" alt="Customer">
+                                        <span>Luffy</span>
+                                        </a>
+                                        
+                                    </div>
+                                </td>
+                                <td>Pending</td>
+                                <td>Pending</td>
+                                <td>21,June,3036 </td>
+                                <td>
+                                    <div class="button-group">
+                                        <button class="btn btn-view">View</button>
+                                        <button class="btn btn-export">Print</button>
+                                      
+                                    </div>
+                                  </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>#2148</td>
+                                <td>340 TK</td>
+                                <td>
+                                    <div class="book-info-td">
+                                        <a href="../reader-profile.html">
+                                            <img src="../assets/images/The-Casual-Optimist.jpg" class="icon-class-td" alt="Customer">
+                                        <span>The Casual Optimist</span>
+                                        </a>
+                                        
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="customer-info">
+                                        <a href="../reader-profile.html">
+                                            <img src="../assets/icons/dp.jpeg" class="icon-class-dp" alt="Customer">
+                                        <span>Luffy</span>
+                                        </a>
+                                        
+                                    </div>
+                                </td>
+                                <td>Pending</td>
+                                <td>Pending</td>
+                                <td>21,June,3036 </td>
+                                <td>
+                                    <div class="button-group">
+                                        <button class="btn btn-view">View</button>
+                                        <button class="btn btn-export">Print</button>
+                                      
+                                    </div>
+                                  </td>
+                            </tr>
+                            
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="8" align="center">
+                                    <div class="pagination">
+                                        <button class="btn-prev" disabled>Previous</button>
+                                        <span class="page-info">Page <span id="current-page">1</span> of <span id="total-pages">1</span></span>
+                                        <button class="btn-next">Next</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+        
+        
+                <!-- books count table end  -->
+                
+    </section>
+    <!-- main--content end  -->
+</body>
+</html>
