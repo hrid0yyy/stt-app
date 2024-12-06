@@ -1,0 +1,61 @@
+<style>
+    /* Dropdown Styling */
+form select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333;
+    background-color: #f9f9f9;
+    outline: none;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+form select:focus {
+    border-color: #3498db;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+</style>
+<div id="advertisement-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Advertise Your Book</h2>
+        <form id="advertisement-form">
+            <div>
+                <p>Selected Book:</p>
+                <input type="text" id="selected-book" readonly>
+            </div>
+            <div>
+                <p>Advertisement Duration (in days):</p>
+                <input type="number" id="ad-duration" placeholder="Enter duration" required>
+            </div>
+            <div>
+                <p>Advertisement Budget ($):</p>
+                <input type="number" id="ad-budget" placeholder="Enter budget" required>
+            </div>
+            <div>
+                <p>Advertisement Type:</p>
+                <div class="checkbox-group">
+                    <label><input type="radio" name="adType" value="banner" required> Banner Ad</label>
+                    <label><input type="radio" name="adType" value="popup"> Popup Ad</label>
+                </div>
+            </div>
+            <div>
+                <p>Category:</p>
+                <select id="ad-category" required>
+                    <option value="" disabled selected>Select Category</option>
+                    <option value="new-release">New Release</option>
+                    <option value="top-seller">Top Seller</option>
+                    <option value="discounted-books">Discounted Books</option>
+                </select>
+            </div>
+            <div class="form-buttons">
+                <button type="reset" class="discard-btn">Discard</button>
+                <button type="submit" class="submit-btn">Submit Advertisement</button>
+            </div>
+        </form>
+    </div>
+</div>

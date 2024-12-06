@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/styles/nav.css">
+    <link rel="stylesheet" href="../assets/styles/sidebar.css">
+    <link rel="stylesheet" href="../assets/styles/universal.css">
+    <link rel="stylesheet" href="../assets/styles/main--content.css">
+    <link rel="stylesheet" href="../assets/styles/book-add.css">
+</head>
+<body>
+    <section class="sidebar">
+        <div class="menu">
+            <div class="logo-icon">
+                <img class="icon-class" src="../assets/icons/logo-icon.png" alt="Logo">
+            </div>
+            <div class="links">
+                <div class="center grid common-hover active">
+                    <a href="dashboard.html" class="link">
+                        <img class="icon-class" src="../assets/icons/grid.png" alt="Dashboard">
+                    </a>
+                </div>
+                <div class="center profile common-hover">
+                    <a href="profile.html" class="link">
+                        <img class="icon-class" src="../assets/icons/profile.png" alt="Profile">
+                    </a>
+                </div>
+                <div class="center message common-hover">
+                    <a href="#" class="link">
+                        <img class="icon-class-small message-with-dot" src="../assets/icons/orange-dot.png" alt="">
+                        <img class="icon-class" src="../assets/icons/message.png" alt="Messages">
+                    </a>
+                </div>
+                <div class="center reader common-hover">
+                    <a href="#">
+                        
+                        <img class="icon-class " src="../assets/icons/reader.png" alt="">
+                    </a>
+                </div>
+                <div class="center books common-hover">
+                    <a href="#">
+                        
+                        <img class="icon-class " src="../assets/icons/book.png" alt="">
+                    </a>
+                </div>
+                <div class="center review common-hover">
+                    <a href="#">
+                        
+                        <img class="icon-class " src="../assets/icons/review.png" alt="">
+                    </a>
+                </div>
+                <div class="center settings common-hover">
+                    <a href="#">
+                        
+                        <img class="icon-class " src="../assets/icons/material-symbols--settings-outline.png" alt="">
+                    </a>
+                </div>
+                <div class="center logout common-hover">
+                    <a href="#">
+                        
+                        <img class="icon-class " src="../assets/icons/logout.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- navbar start  -->
+    <section class="navbar">
+        <div class="bar">
+            <img class="icon-class" src="../assets/icons/bar.png" alt="Menu">
+        </div>
+        <div class="profile-section">
+            <div class="plus">
+                <img class="icon-class" src="../assets/icons/plus.png" alt="Add">
+            </div>
+            <div class="notification">
+                <img class="icon-class-small isNotification" src="../assets/icons/orange-dot.png" alt="">
+                <img class="icon-class bell" src="../assets/icons/bell.png" alt="Notifications">
+            </div>
+            <div class="profile-div">
+                <img class="icon-class-dp" src="../assets/icons/dp.jpeg" alt="Profile Picture">
+            </div>
+        </div>
+    </section>
+    <!-- navbar end  -->
+    <!-- main--content start  -->
+    <section class="main--content">
+        <div class="dashboard--title">
+            <div id="dashboard-title"><span>Dashboard</span></div>
+            <div class="single-bar"></div>
+            <div class="page-title">Books Management</div>
+            <div class="single-bar"></div>
+            <div class="page-title">Add Book</div>
+        </div>
+        <div class="form-container">
+            <form action="">
+                <div class="tab-one">
+                    <div class="input-title">
+                        <label for="title">Title:</label>
+                    </div>
+                    <div class="input-field">
+                        <input class="input-field" type="text">
+                    </div>
+                    <div class="input-container">
+                        <label for="product-description" class="input-title">Product Description</label>
+                        <textarea id="product-description" class="input-textarea" placeholder="Write a description here.."></textarea>
+                      </div>
+                    <div class="input-title">
+                        <label for="title">Display Image:</label>
+                    </div>
+                    <div class="input-field upload-img">
+                        <input class="upload-img" type="file" id="file-upload" hidden />
+                        <label for="file-upload" class="upload-label"><img src="../assets/icons/upload.png" alt=""></label>
+                    </div>
+                      
+                    <div class="input-title">
+                        <label for="title">Authors Name:</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="text">
+                    </div>
+                    <div class="input-title">
+                        <label for="title">Publisher Name:</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="text">
+                    </div>
+                    <div class="input-title">
+                        <label for="title">Genre:</label>
+                    </div>
+                    <div class="genre-selection">
+                        <label class="genre-option">
+                          <input type="checkbox" name="genre" value="Fiction">
+                          <span>Fiction</span>
+                        </label>
+                        <label class="genre-option">
+                          <input type="checkbox" name="genre" value="Non-Fiction">
+                          <span>Non-Fiction</span>
+                        </label>
+                        <label class="genre-option">
+                          <input type="checkbox" name="genre" value="Mystery">
+                          <span>Mystery</span>
+                        </label>
+                        <label class="genre-option">
+                          <input type="checkbox" name="genre" value="Fantasy">
+                          <span>Fantasy</span>
+                        </label>
+                        <label class="genre-option">
+                          <input type="checkbox" name="genre" value="Fantasy">
+                          <span>Fantasy</span>
+                        </label>
+                        <label class="genre-option">
+                          <input type="checkbox" name="genre" value="Fantasy">
+                          <span>Fantasy</span>
+                        </label>
+                        <label class="genre-option">
+                          <input type="checkbox" name="genre" value="Fantasy">
+                          <span>Fantasy</span>
+                        </label>
+                        <label class="genre-option">
+                          <input type="checkbox" name="genre" value="Fantasy">
+                          <span>Fantasy</span>
+                        </label>
+                        <label class="genre-option">
+                          <input type="checkbox" name="genre" value="Fantasy">
+                          <span>Fantasy</span>
+                        </label>
+                      </div>
+            
+                </div>
+                <div class="tab-two">
+                    <div class="input-title">
+                        <label for="title">Pages:</label>
+                    </div>
+                    <div class="input-field">
+                        <input class="input-field" type="number">
+                    </div>
+                    <div class="input-title">
+                        <label for="title">Stock:</label>
+                    </div>
+                    <div class="input-field">
+                        <input class="input-field" type="number">
+                    </div>
+                    <div class="input-title">
+                        <label for="description">Published Date:<span class="optional">(Optional)</span></label>
+                    </div>
+                    <div class="input-field">
+                        <input class="input-field" type="date">
+                    </div>
+                    <div class="input-title">
+                        <label for="description">Language:</label>
+                    </div>
+                    <div class="input-field">
+                        <label class="genre-option">
+                            <input type="checkbox" name="genre" value="Fantasy">
+                            <span>Bangla</span>
+                          </label>
+                        <label class="genre-option">
+                            <input type="checkbox" name="genre" value="Fantasy">
+                            <span>English</span>
+                          </label>
+                    </div>
+                    <div class="input-title">
+                        <label for="description">Catagory:</label>
+                    </div>
+                    <div class="input-field">
+                        <select class="category-select" id="category">
+                            <option value="general">General</option>
+                            <option value="new-release">New Release</option>
+                            <option value="best-seller">Best Seller</option>
+                            <option value="e-book">E-book</option>
+                          </select>
+                    </div>
+                    <div class="input-title">
+                        <label for="description">Tags:</label>
+                    </div>
+                    <div class="input-field flex-gap">
+                        <span>Paperbacks:</span>
+                        <input type="text" placeholder="Price" class="price-input">
+                        <span>Normal:</span>
+                        <input type="text" placeholder="Price" class="price-input">
+                        <span>Hard Cover:</span>
+                        <input type="text" placeholder="Price" class="price-input">   
+                    </div>
+                    <div class="input-title">
+                        <label for="description">Settings: <span class="optional">(Optional)</span></label>
+                    </div>
+                    <div class="input-field">
+                        <input class="input-field" type="text">
+                    </div>
+                    <div class="input-title">
+                        <label for="description">Characters: <span class="optional">(Optional)</span> </label>
+                    </div>
+                    <div class="input-field">
+                        <input class="input-field" type="text">
+                    </div>
+                    <div class="button-group">
+                        <button class="btn discard-btn">
+                            <img src="../assets/icons/delete.png" class="icon-class" alt=""> Discard</button>
+                        <button class="btn save-draft-btn">
+                            <img src="../assets/icons/draft.png" class="icon-class" alt="">
+                            Save Draft</button>
+                        <button class="btn publish-btn">
+                            <img src="../assets/icons/send.png"class="icon-class" alt="">
+                            Publish</button>
+                      </div>
+                      
+                </div>
+            </form>
+        </div>
+          
+    </section>
+   
+      
+
+</body>
+</html>
