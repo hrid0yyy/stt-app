@@ -5,39 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup - Online Book Store</title>
     <link rel="stylesheet" href="assets/styles/style.css">
+    <script src="https://unpkg.com/@supabase/supabase-js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bcryptjs"></script>
+
 </head>
 <body>
     <div class="background">
-        <!-- <div class="circle"></div> -->
         <div class="signup-card">
-            <h2 class="title">Create Your Account</h2>
-            <p class="subtitle">Join <span class="bold-text">Shelf To Tales</span> today!</p>
-
-            <form action="#" method="post">
-                <div class="input-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-                </div>
-                <div class="input-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="yourname@example.com" required>
-                </div>
-                <div class="input-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="********" required>
-                </div>
-                <div class="input-group">
-                    <label for="confirm-password">Confirm Password</label>
-                    <input type="password" id="confirm-password" name="confirm-password" placeholder="********" required>
-                </div>
-
-                <button type="submit" class="signup-btn"><a href="submit-shop-details.html">Sign Up</a></button>
-            </form>
-
-            <p class="login">Already have an account? <a href="index.html">Log in here</a></p>
+          <h2 class="title">Create Your Account</h2>
+          <p class="subtitle">Join <span class="bold-text">Shelf To Tales</span> today!</p>
+    
+          <form id="signup-form">
+            <div class="input-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+            <div class="input-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="yourname@example.com" required>
+            </div>
+            <div class="input-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" placeholder="********" required>
+            </div>
+            <div class="input-group">
+              <label for="confirm-password">Confirm Password</label>
+              <input type="password" id="confirm-password" name="confirm-password" placeholder="********" required>
+            </div>
+    
+            <button type="submit" class="signup-btn">Sign Up</button>
+          </form>
+    
+          <p class="login">Already have an account? <a href="index.html">Log in here</a></p>
         </div>
-        <!-- <div class="circle-2"></div> -->
-
     </div>
     <div class="bg-shadow">
 
@@ -58,5 +59,7 @@
         
         
     </div>
+
+    <script src="backend/signup.js"></script>
 </body>
 </html>
