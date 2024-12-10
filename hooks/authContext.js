@@ -7,15 +7,16 @@ export const AuthContextProvider = ({ children }) => {
   const [inPreference, setInPreference] = useState(false);
   const [user, setUser] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(undefined);
+  const [session, setSession] = useState(null);
 
   useEffect(() => {
     // Listen for auth state changes
     const { data: subscription } = supabase.auth.onAuthStateChange(
       async (event, session) => {
         if (session?.user) {
+          setSession(session);
           setIsAuthenticated(true);
-          setUser(session.user);
-          await updateUserData(session.user.id);
+          await updateUserData(session.user);
         } else {
           setIsAuthenticated(false);
           setUser(null);
@@ -24,26 +25,57 @@ export const AuthContextProvider = ({ children }) => {
     );
 
     // Cleanup subscription on unmount
-    return () => subscription?.unsubscribe();
+    return () => subscription;
   }, []);
 
-  const updateUserData = async (userId) => {
+  async function updateUserDetails(fullName, mobileNumber, loc, profileUrl) {
+    console.log(fullName, mobileNumber, loc, profileUrl);
+    try {
+      // Update the user details in the database
+      const { data, error } = await supabase
+        .from("users") // Specify the table name
+        .update({
+          full_name: fullName,
+          mobile_number: mobileNumber,
+          profile_url: profileUrl,
+          location: loc,
+        })
+        .eq("id", user?.id); // Match the user by ID
+
+      if (error) {
+        throw new Error(error.message);
+      }
+
+      return { success: true, data };
+    } catch (error) {
+      console.error("Error updating user details:", error.message);
+      return { success: false, error: error.message };
+    }
+  }
+
+  const updateUserData = async (user) => {
     try {
       const { data, error } = await supabase
         .from("users")
         .select("*")
-        .eq("id", userId)
+        .eq("id", user.id)
         .single();
-
       if (error) throw error;
-
       if (data) {
         setUser({
-          ...user,
+          last_sign_in: user.last_sign_in_at,
+          email: user.email,
           username: data.username,
-          createdAt: data.created_at,
+          id: data.id,
+          createdAt: user.created_at,
+          fullName: data.full_name,
+          number: data.mobile_number,
+          preferredGenre: data.preferred_genre,
+          location: data.location,
+          profileUrl: data.profile_url,
         });
       }
+      console.log(user);
     } catch (error) {
       console.error("Error fetching user data:", error.message);
     }
@@ -80,7 +112,6 @@ export const AuthContextProvider = ({ children }) => {
         email,
         password,
       });
-      console.log(data);
 
       if (error) throw error;
 
@@ -89,12 +120,14 @@ export const AuthContextProvider = ({ children }) => {
         {
           id: data.user.id,
           username,
-          created_at: new Date(),
         },
       ]);
 
       if (dbError) throw dbError;
 
+      setUser({ id: data.user.id, username: username });
+
+      setIsAuthenticated(true);
       setInPreference(true);
       return { success: true, data: data.user };
     } catch (e) {
@@ -112,6 +145,8 @@ export const AuthContextProvider = ({ children }) => {
         register,
         inPreference,
         setInPreference,
+        updateUserDetails,
+        updateUserData,
       }}
     >
       {children}

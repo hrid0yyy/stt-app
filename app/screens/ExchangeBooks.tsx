@@ -21,6 +21,7 @@ export default function ExchangeBooks() {
   const [addItemModal, setAddItemModal] = useState(false);
   const router = useRouter();
   const genre = "Non Ficiton ,Fiction , Novel asdsad";
+
   const toggleItemModal = () => {
     setAddItemModal(!addItemModal);
   };
@@ -32,7 +33,6 @@ export default function ExchangeBooks() {
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Exchange Books</Text>
       </View>
-
       <ScrollView>
         <View className="gap-10 items-center mt-5">
           <View
@@ -106,7 +106,7 @@ export default function ExchangeBooks() {
           </View>
         </View>
       </ScrollView>
-
+      99
       {/* add item modal */}
       <Modal isVisible={addItemModal}>
         <View style={{ flex: 1 }}>

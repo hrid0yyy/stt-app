@@ -9,7 +9,7 @@ import {
   Pressable,
   Alert,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -19,11 +19,21 @@ import { ProgressBar, MD3Colors } from "react-native-paper";
 import RNPickerSelect from "react-native-picker-select";
 import { Button } from "react-native-paper";
 import { useRouter } from "expo-router";
+import * as FileSystem from "expo-file-system";
+import { decode } from "base64-arraybuffer";
+import { supabase } from "../../supabaseConfig";
+import { FileObject } from "@supabase/storage-js";
+import { useAuth } from "@/hooks/authContext";
+import Loading from "../../components/Loading";
 export default function userDetails() {
+  const [loading, setLoading] = useState(false);
   const [fullName, setFullName] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
   const [location, setLocation] = useState("");
   const [userImage, setUserImage] = useState(null);
+  const [imageMetadata, setImageMetadata] = useState(null);
+  const { user, updateUserDetails } = useAuth();
+  const [files, setFiles] = useState<FileObject[]>([]);
   const router = useRouter();
   // Dropdown options for location
   const locationOptions = [
@@ -35,36 +45,87 @@ export default function userDetails() {
   ];
 
   // Function to handle image picking
+  useEffect(() => {
+    console.log("--->", user);
+  }, []);
   const pickImage = async () => {
-    // if (!permissionResult.granted) {
-    //   alert("Permission to access the camera roll is required!");
-    //   return;
-    // }
-
-    const result = await ImagePicker.launchImageLibraryAsync({
+    const options: ImagePicker.ImagePickerOptions = {
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
       allowsEditing: true,
-      aspect: [1, 1],
-      quality: 0.5,
-    });
+    };
+    const result = await ImagePicker.launchImageLibraryAsync(options);
+    setUserImage(result.assets[0].uri);
+    // console.log(result.assets[0].uri);
+    if (!result.canceled) {
+      //  setUserImage(result.assets[0]); // cant be assigned
 
-    if (!result.canceled && result.assets && result.assets.length > 0) {
-      setUserImage(result.assets[0].uri); // Update the state with the URI
+      const img = result.assets[0];
+      const base64 = await FileSystem.readAsStringAsync(img.uri, {
+        encoding: "base64",
+      });
+      const filePath = `${user!.id}/${user!.username}.${
+        img.type === "image" ? "jpeg" : "jpg"
+      }`;
+
+      const contentType = img.type === "image" ? "image/jpeg" : "image/jpg";
+
+      setImageMetadata({ base64, filePath, contentType });
     }
+    console.log(setImageMetadata);
   };
+  function validateMobileNumber(number) {
+    // Check if the input is a string and exactly 11 characters long
 
-  const handleDetails = () => {
+    if (typeof number !== "string" || number.length == 11) {
+      return false;
+    }
+
+    // Check if the mobile number starts with "01"
+    return number.startsWith("01");
+  }
+  const handleDetails = async () => {
+    setLoading(true);
     if (
       fullName == "" ||
       mobileNumber == "" ||
       location == "" ||
-      userImage == null
+      userImage == null ||
+      imageMetadata == null ||
+      validateMobileNumber(mobileNumber)
     ) {
       Alert.alert("Alert", "Please fill up all the necessary information!!");
+      setLoading(false);
       return;
     }
-    console.log(fullName, mobileNumber, location, userImage);
-    // database operation then redirect to change userPreference
+    try {
+      const { base64, filePath, contentType } = imageMetadata;
+
+      // Upload the image to Supabase
+      const { error } = await supabase.storage
+        .from("stt-storage")
+        .upload(filePath, decode(base64), { contentType });
+
+      if (error) {
+        throw new Error("Error uploading image: " + error.message);
+      }
+
+      console.log("Image uploaded successfully:", filePath);
+      const {
+        data: { publicUrl },
+        error: urlError,
+      } = supabase.storage.from("stt-storage").getPublicUrl(filePath);
+      await updateUserDetails(fullName, mobileNumber, location, publicUrl);
+      // Perform database operations or other logic here
+
+      // Navigate to the next screen
+      // router.push("/screens/userPreference");
+      setLoading(false);
+    } catch (error) {
+      console.error(error);
+      Alert.alert("Error", error.message);
+      setLoading(false);
+    }
+
     router.push("/screens/userPreference");
   };
 
@@ -99,6 +160,7 @@ export default function userDetails() {
         <Pressable
           onPress={() => {
             setUserImage(null);
+            setImageMetadata(null);
           }}
         >
           <Text style={{ textAlign: "center", color: "gray" }}>Remove</Text>
@@ -165,9 +227,13 @@ export default function userDetails() {
       </View>
 
       <View style={{ marginTop: hp(5), alignItems: "center" }}>
-        <TouchableOpacity onPress={handleDetails} style={styles.submitButton}>
-          <Text style={{ color: "white", fontSize: hp(2.5) }}>Submit</Text>
-        </TouchableOpacity>
+        {loading ? (
+          <Loading size={hp(10)} />
+        ) : (
+          <TouchableOpacity onPress={handleDetails} style={styles.submitButton}>
+            <Text style={{ color: "white", fontSize: hp(2.5) }}>Submit</Text>
+          </TouchableOpacity>
+        )}
       </View>
     </ImageBackground>
   );

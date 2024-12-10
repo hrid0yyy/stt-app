@@ -11,6 +11,7 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import LinearGradient from "react-native-linear-gradient";
+import { supabase } from "@/supabaseConfig";
 const genres = [
   "Novel",
   "SciFi",
@@ -28,6 +29,7 @@ import { ProgressBar, MD3Colors } from "react-native-paper";
 import { useAuth } from "@/hooks/authContext";
 import { useRouter } from "expo-router";
 export default function userPreference() {
+  const { user } = useAuth();
   const [selectedGenres, setSelectedGenres] = useState([]);
   const { setInPreference } = useAuth();
   const router = useRouter();
@@ -39,12 +41,21 @@ export default function userPreference() {
       setSelectedGenres([...selectedGenres, genre]);
     }
   };
-  // for debugging
-  // useEffect(() => {
-  //   console.log(selectedGenres);
-  // });
-  const handle = () => {
+
+  const handle = async () => {
     setInPreference(false);
+    const genres = selectedGenres.join(",");
+    console.log(genres);
+    const { data, error } = await supabase
+      .from("users") // Specify the table name
+      .update({
+        preferred_genre: genres,
+      })
+      .eq("id", user?.id); // Match the user by ID
+
+    if (error) {
+      throw new Error(error.message);
+    }
   };
   return (
     <>

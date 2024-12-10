@@ -1,3 +1,4 @@
+import { useRouter } from "expo-router";
 import React, { useState } from "react";
 import {
   View,
@@ -81,7 +82,7 @@ export default function Home() {
   const screenWidth = Dimensions.get("window").width;
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeFilter, setActiveFilter] = useState("This Week");
-
+  const router = useRouter();
   const filters = ["This Week", "This Month", "This Year"];
 
   const handleScroll = (event) => {
@@ -126,6 +127,11 @@ export default function Home() {
                 activeIndex !== index && styles.shadowedCard,
               ]}
               activeOpacity={0.9}
+              onPress={() =>
+                router.push(
+                  `/screens/bookDetails?bookId=${deal.id}&type=Best Deals`
+                )
+              }
             >
               <Image source={{ uri: deal.image }} style={styles.image} />
               <View style={styles.details}>

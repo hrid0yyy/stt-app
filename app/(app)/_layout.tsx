@@ -59,7 +59,7 @@ function DrawerContent() {
             <View className="mt-7 ml-7 mb-8 gap-3">
               <Image
                 source={{
-                  uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqaXRrLoiFQHF1rlJkUiOvUjCTWx3dfJd7eXQxVfrCLwOkn1wo-CWjRPOi5xaGZQ5v-Lc&usqp=CAU",
+                  uri: user?.profileUrl,
                 }}
                 style={{
                   height: hp(10),

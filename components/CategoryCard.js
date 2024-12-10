@@ -14,46 +14,44 @@ import {
 
 export default function CategoryCard({ title }) {
   return (
-    <TouchableOpacity>
-      <View
+    <View
+      style={{
+        borderRadius: hp(2),
+        height: hp(18),
+        width: wp(40),
+        overflow: "hidden",
+      }}
+    >
+      <ImageBackground
+        source={require("../assets/images/1001222766.jpg")}
         style={{
+          height: "100%",
+          width: "100%",
+        }}
+        imageStyle={{
           borderRadius: hp(2),
-          height: hp(18),
-          width: wp(40),
-          overflow: "hidden",
         }}
       >
-        <ImageBackground
-          source={require("../assets/images/1001222766.jpg")}
+        {/* Gradient Overlay */}
+        <LinearGradient
+          colors={["rgba(0, 0, 0, 0.6)", "rgba(0, 0, 0, 0.1)"]} // Darker at the top, lighter at the bottom
           style={{
-            height: "100%",
-            width: "100%",
-          }}
-          imageStyle={{
-            borderRadius: hp(2),
+            flex: 1,
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
-          {/* Gradient Overlay */}
-          <LinearGradient
-            colors={["rgba(0, 0, 0, 0.6)", "rgba(0, 0, 0, 0.1)"]} // Darker at the top, lighter at the bottom
+          <Text
             style={{
-              flex: 1,
-              justifyContent: "center",
-              alignItems: "center",
+              color: "white",
+              fontSize: hp(2),
+              fontWeight: "bold",
             }}
           >
-            <Text
-              style={{
-                color: "white",
-                fontSize: hp(2),
-                fontWeight: "bold",
-              }}
-            >
-              {title}
-            </Text>
-          </LinearGradient>
-        </ImageBackground>
-      </View>
-    </TouchableOpacity>
+            {title}
+          </Text>
+        </LinearGradient>
+      </ImageBackground>
+    </View>
   );
 }

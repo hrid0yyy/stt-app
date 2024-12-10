@@ -4,13 +4,14 @@ import { AuthContextProvider, useAuth } from "../hooks/authContext";
 import { useEffect, useLayoutEffect } from "react";
 
 const MainLayout = () => {
-  const { isAuthenticated, inPreference } = useAuth();
+  const { isAuthenticated, inPreference, user, updateUserData } = useAuth();
   const segments = useSegments();
   const router = useRouter();
 
   useLayoutEffect(() => {
-    //router.replace("/screens/userPreference"); // for designing any page
-  });
+    //router.replace("/screens/userDetails"); // for designing any page
+    console.log(user);
+  }, []);
 
   useEffect(() => {
     if (inPreference) {
@@ -22,6 +23,7 @@ const MainLayout = () => {
     const inApp = segments[0] == "(app)";
     if (isAuthenticated && !inApp) {
       //redirect to home
+      updateUserData(user);
       router.replace("/(app)/home");
     } else if (!isAuthenticated) {
       //redirect to sign in

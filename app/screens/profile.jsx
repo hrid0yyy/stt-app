@@ -1,4 +1,11 @@
-import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+  ScrollView,
+} from "react-native";
 import React, { useEffect } from "react";
 import Header from "../../components/defaultHeader";
 import {
@@ -8,11 +15,18 @@ import {
 import { useAuth } from "@/hooks/authContext";
 import { LinearGradient } from "expo-linear-gradient";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
-import { FontAwesome5, Entypo, Feather } from "@expo/vector-icons"; // Replace with your chosen icon library
-
+import {
+  FontAwesome5,
+  Entypo,
+  Feather,
+  FontAwesome,
+  AntDesign,
+} from "@expo/vector-icons"; // Replace with your chosen icon library
+import { useRouter } from "expo-router";
 export default function profile() {
   const { user } = useAuth();
-  const createdAtDate = new Date(user?.createdAt.seconds * 1000); // Convert seconds to milliseconds
+  const createdAtDate = new Date(user?.createdAt);
+  const router = useRouter();
   const menuItems = [
     {
       icon: (
@@ -20,22 +34,38 @@ export default function profile() {
       ),
       title: "Profile Details",
       subtitle: "View your profile details.",
+      path: "/screens/profileDetails",
+    },
+    {
+      icon: <FontAwesome name="exchange" size={hp(3)} color="#121212" />,
+      title: "Exchange Books",
+      subtitle: "Add books which you want to exchange with others.",
+      path: "/screens/ExchangeBooks",
+    },
+    {
+      icon: <AntDesign name="book" size={hp(3)} color="#121212" />,
+      title: "Borrow Books",
+      subtitle: "Books you borrowed previously and track the borrow time.",
+      path: "/screens/BorrowBooks",
     },
     {
       icon: <Feather name="shopping-cart" size={hp(3)} color="#121212" />,
       title: "Purchase",
       subtitle: "View your all purchase history.",
+      path: "/screens/profileDetails",
     },
     {
       icon: <FontAwesome5 name="user-friends" size={hp(3)} color="#121212" />,
       title: "Friends",
       subtitle: "View all your fiends.",
+      path: "/screens/profileDetails",
     },
     {
       icon: <Entypo name="add-to-list" size={hp(3)} color="#121212" />,
       title: "Wishlist",
       subtitle:
         "Add your favorite items in your wishlist so you can buy them later.",
+      path: "/screens/profileDetails",
     },
   ];
   return (
@@ -76,7 +106,7 @@ export default function profile() {
             }}
           >
             <Image
-              source={require("../../assets/images/zoro.jpg")}
+              source={{ uri: user?.profileUrl }}
               style={{ height: hp(10), width: wp(20), borderRadius: hp(50) }}
             />
             <View>
@@ -90,20 +120,25 @@ export default function profile() {
           </View>
         </LinearGradient>
       </View>
-
-      <View style={styles.container}>
-        {menuItems.map((item, index) => (
-          <TouchableOpacity>
-            <View key={index} style={styles.menuItem}>
-              <View style={styles.iconContainer}>{item.icon}</View>
-              <View>
-                <Text style={styles.title}>{item.title}</Text>
-                <Text style={styles.subtitle}>{item.subtitle}</Text>
+      <ScrollView>
+        <View style={styles.container}>
+          {menuItems.map((item, index) => (
+            <TouchableOpacity
+              onPress={() => {
+                router.push(item.path);
+              }}
+            >
+              <View key={index} style={styles.menuItem}>
+                <View style={styles.iconContainer}>{item.icon}</View>
+                <View>
+                  <Text style={styles.title}>{item.title}</Text>
+                  <Text style={styles.subtitle}>{item.subtitle}</Text>
+                </View>
               </View>
-            </View>
-          </TouchableOpacity>
-        ))}
-      </View>
+            </TouchableOpacity>
+          ))}
+        </View>
+      </ScrollView>
     </View>
   );
 }

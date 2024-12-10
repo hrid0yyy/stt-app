@@ -7,11 +7,10 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { useAuth } from "@/hooks/authContext";
+
 const MyComponent = () => {
   const [searchQuery, setSearchQuery] = React.useState("");
 
-  const { logout } = useAuth();
   const handleCart = () => {
     // navigate to cart page
   };
