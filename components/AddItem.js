@@ -19,11 +19,11 @@ import {
 import { useAuth } from "@/hooks/authContext";
 import * as FileSystem from "expo-file-system";
 import { supabase } from "@/supabaseConfig";
-import { FileObject } from "@supabase/storage-js";
-import { decode } from "base64-arraybuffer";
 import { Buffer } from "buffer";
 import Uploading from "@/components/Uploading";
 import { useRouter } from "expo-router";
+import CONFIG from "@/config";
+
 export default function AddNewItem() {
   const [selectedType, setSelectedType] = useState("Temporary"); // Default selection
   const [bookName, setBookName] = useState("");
@@ -36,7 +36,6 @@ export default function AddNewItem() {
   const [upload, setUpload] = useState(false);
   const { user } = useAuth();
   const { router } = useRouter();
-  const ip = require("@/utils/ip");
   const handleAddItem = async () => {
     if (bookName === "" || location === "" || images.length === 0) {
       Alert.alert("Error", "Please fill up all the necessary information (*)");
@@ -92,7 +91,7 @@ export default function AddNewItem() {
         },
       };
 
-      const response = await fetch(`http://${ip}:3000/data`, {
+      const response = await fetch(`${CONFIG.url}/data`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(reqObj),

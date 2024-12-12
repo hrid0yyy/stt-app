@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     left: -wp(4),
     width: wp(100), // Full screen width
     height: hp(100), // Full screen height
-    backgroundColor: "rgba(0, 0, 0, 0.5)", // Transparent black
+    //  backgroundColor: "rgba(0, 0, 0, 0.5)", // Transparent black
     justifyContent: "center",
     alignItems: "center",
   },

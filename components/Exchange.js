@@ -17,6 +17,8 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import axios from "axios";
 import { useAuth } from "@/hooks/authContext";
+import CONFIG from "@/config";
+import Uploading from "@/components/Uploading";
 
 export default function Exchange({ goBack }) {
   const [searchQuery, setSearchQuery] = React.useState("");
@@ -25,7 +27,6 @@ export default function Exchange({ goBack }) {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const ip = require("@/utils/ip"); // Adjust the path as needed
   useEffect(() => {
     const loadBooks = async () => {
       try {
@@ -44,7 +45,7 @@ export default function Exchange({ goBack }) {
   const fetchExchangeBooks = async (userId) => {
     try {
       const response = await axios.get(
-        `http://${ip}:3000/exchange/exchange-books`,
+        `${CONFIG.url}/exchange/exchange-books`,
         {
           params: { userId },
         }
@@ -59,9 +60,7 @@ export default function Exchange({ goBack }) {
     }
   };
   if (loading) {
-    return (
-      <ActivityIndicator size="large" color="#0000ff" style={styles.loader} />
-    );
+    return <Uploading />;
   }
   return (
     <View className="flex-1 bg-white">
