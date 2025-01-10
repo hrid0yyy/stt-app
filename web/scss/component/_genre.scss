@@ -1,0 +1,43 @@
+/* General container styling */
+.genre-selection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  /* Hide the default checkbox */
+  .genre-option input[type="checkbox"] {
+    display: none;
+  }
+  
+  /* Styled button-like spans */
+  .genre-option span {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  /* Hover effect for the button */
+  .genre-option span:hover {
+    background-color: #e0e0e0;
+  }
+  
+  /* Selected state */
+  .genre-option input[type="checkbox"]:checked + span {
+    background-color: #121212;
+    color: white;
+    /* border-color: #4caf50; */
+    transform: scale(1.01); /* Slightly larger to indicate selection */
+  }
+  
+  /* Transition effect */
+  .genre-option span {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
